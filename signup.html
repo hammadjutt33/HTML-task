@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+            color: black;
+        }
+        form{
+            background-color:white;
+            justify-content: center;
+            width: 80px,80px;
+            padding: 30px 30px;
+            position: absolute;
+            transform: translate(-50,-50);
+            top: 50px;
+            left: 9cm;
+            border-radius: 8px;
+            box-shadow: 50px,50px,50px rgba(ed, green, blue, alpha);
+
+        }
+        button{
+            color: white;
+            padding: 5px 8px;
+            background-color:black
+            ;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 15;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 80px;
+        }
+          
+
+          
+            
+    </style>
+</head>
+<body>
+<p style="text-align: center;"><b>Create New account</b></Create></p>
+<form action="">
+<div>
+    <label for="fname">First Name</label><br>
+    <input type="text"id = "fname"name="fname"><br><br> </div>
+    <label for="lname">Last Name  </label><br>
+    <input type="text"id ="lname"name="lname"><br><br>
+    <label for="email">Email Address</label><br>
+    <input type="email" name="email" id="email"><br><br>
+    <label for="pwd">Password</label><br>
+    <input type="password" name="pwd" id="password"><br><br>
+    <label for="pwd">Confirm Password</label><br>
+    <input type="password" name="pwd" id="confirmpassword"><br>
+    <p id="message"></p>
+    <button type="submit"onclick=checkpassword()>submit</button>
+   
+</form>
+<script>
+    function checkpassword(){
+    let password1=document.getElementById("password").value;
+    let confirmpassword1=document.getElementById("confirmpassword").value;
+console.log("testing","password")
+   if(password1==""){
+    alert("write password");
+   }
+   else if(password1 == confirmpassword1){
+    alert("password matched");
+   }
+   else{
+    alert("password not matched");
+   }
+}
+
+ </script>
+ 
+
+  
+
+    
+</body>
+</html>
