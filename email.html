@@ -12,25 +12,27 @@ body{
         font-size: 10px;
     }
    input{
-        border-radius: 5px;
-        width: 5cm;
-
+        border-radius: 6px;
+        height: 35px;
+        width: 45%;
+        z-index: 10;
    }
     button{
-        border-radius: 8px;
-        width: 5cm;
+        border-radius: 6px;
+        width: 55%;
+        height:39px ;
     }
   
     
     .main{
         background-color: rgb(123, 184, 131);
-        width: 70%;
-        height: 70%;
-        top: 20%;
+        width: 60%;
+        height: 80%;
+        top: 10%;
         left: 15%;
         position: absolute;
         transform: translate(150px 150px);
-        border-radius: 20px 
+        border-radius: 29px 
 
     }
     .two{
@@ -53,52 +55,99 @@ img{
     
     height:94%;
     width: 96%;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 15px;
     margin-top: 12px;
 }
-/* .four{
-    margin-top: 15px;
-    margin-left: 20px;
-} */
+
 .five{
     margin-left: 20px;
+    padding-top: 20%;
+}
+.six{
+    padding-left: 20px;
 }
 
-
-
+@media(max-width:553px){
+    .three{
+        display: none;
+    }
+    .main{
+        height: auto;
+    }
+    .two{
+        margin-bottom: 5px;
+        width: auto;
+    }
+    
+    
+}
+    #emailerror{
+        color: red;
+        position: absolute;
+        font-size: larger;
+     }
+     .EmailError{
+        border:2px solid red;
+     }   
 
 </style>
 </head>
 <body>
-    
-  <form action=""> 
-  <div class="main">
-   <div class="two">
-    <div class="four" >
-    <h1 style="font-size: xx-large;margin: 20px;"> Stay updated!</h1> 
-    <p style="padding: 20px ;">Join 60000 product managers reciving monthly update now</p>
-  <ul>
-    <li>Prouduct discovery and building what matters</li>
-  <li>Measuring to ensure update are success </li>
-  <li>And much more</li></ul>
-  <div class="five">
-    <label for="Email ">Enter your email</label><br>
-  <input type="email"name="email"id="email"placeholder="email@company.com"><br><br>
-  <button type="submit"onclick=validemail()>submit</button>
-</div>
-  <script>
-  function validemail(){
-   var email= document.getElementById("email").value
-  }
+<form onsubmit=validateEmail();>
+    <div class="main">
+      <div class="two">
+         <div class= "four">
+                <h1 style= "font-size: xx-large;margin: 20px;"> Stay updated!</h1> 
+                <div class="six"><p>Join 60000 product managers reciving monthly update now</p></div>
+                
+                <ul>   
+                    <li>Prouduct discovery and building what matters</li><br>
+                    <li>Measuring to ensure update are success </li><br>
+                    <li>And much more</li>
+                </ul><br>
+                <div class="five">
+                    <label for= "Email" >Enter your email</label><br>
+                    <input type= "text" id= "Email" name="email" placeholder= "email@company.com" ><br>
+                    <span id= "emailerror" ></span><br><br>
+                    <!-- <button type= "submit" >subscribe to monthly newslatter</button> -->
+                    <input type="submit"value="Subscribe to monthly newslatter">
+                </div>
+         </div>
+      </div>
+          <div class="three">
+             <img src="images/beautiful_nature_pictures_nature_mobile_wallpaper.jpg"alt="website">
+          </div>
 
-</script>
-</div>
-</div>
-   <div class="three">
-    <img src="images/beautiful_nature_pictures_nature_mobile_wallpaper.jpg"alt="website">
-   </div>
-
-  </div>
+    </div>
 </form>
+
+<script>
+    
+
+    function validateEmail(){
+        // console.log("working");
+        var EmailField= document.getElementById("Email").value;
+        var EmailError=document.getElementById("emailerror");
+        var regx=(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+        
+        if (!regx.test(EmailField)) {
+            EmailError.innerHTML = "invalid email";
+        
+       } 
+        else {
+            Emailerror.innerHTML = "";
+            return true;
+        }
+    (EmailError,1000)
+    function EmailError() {
+        // Your email error handling logic here
+        console.log("work");
+    }
+
+// setTimeout(handlError, 1000);
+      
+    }
+    
+</script>
 </body>
 </html>
