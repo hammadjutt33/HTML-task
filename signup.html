@@ -6,21 +6,22 @@
     <title>Document</title>
     <style>
         body{
-            background-color: gray;
-            color: black;
+            background-color: rgba(150, 125, 205, 0);
+            color: rgb(0, 0, 0);
         }
         form{
-            background-color:white;
+            background-color:rgb(172, 150, 150);
             justify-content: center;
-            width: 80px,80px;
-            padding: 30px 30px;
+            width: 150px,150px;
+            padding: 20px 30px;
             position: absolute;
             transform: translate(-50,-50);
             top: 50px;
-            left: 9cm;
+            left: 40%;
             border-radius: 8px;
             box-shadow: 50px,50px,50px rgba(ed, green, blue, alpha);
-
+            position: absolute;
+            height: 70%w;
         }
         button{
             color: white;
@@ -35,18 +36,24 @@
             font-family: Arial, Helvetica, sans-serif;
             border-radius: 80px;
         }
-          
+          @media(max-width:320){
+            form{
+                margin: 25%;
+            }
+              
+          }
 
           
             
     </style>
 </head>
 <body>
-<p style="text-align: center;"><b>Create New account</b></Create></p>
+
 <form action="">
-<div>
+<div class="main">
+    <p style="text-align: center;"><b>Create New account</b></Create></p>
     <label for="fname">First Name</label><br>
-    <input type="text"id = "fname"name="fname"><br><br> </div>
+    <input type="text"id = "fname"name="fname"><br><br> 
     <label for="lname">Last Name  </label><br>
     <input type="text"id ="lname"name="lname"><br><br>
     <label for="email">Email Address</label><br>
@@ -57,7 +64,7 @@
     <input type="password" name="pwd" id="confirmpassword"><br>
     <p id="message"></p>
     <button type="submit"onclick=checkpassword()>submit</button>
-   
+   </div>
 </form>
 <script>
     function checkpassword(){
