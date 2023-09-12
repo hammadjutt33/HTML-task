@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+         }
+         form{
+            background-color:gray;
+            
+           width: 30%;
+           height: 50%;
+           position: absolute;
+           transform: translate(70%,70px);
+           padding-left: 70px;
+           padding-top: 30px;
+           border-radius: 10px;
+           }
+           .first{
+            float: left;
+            width: 20%;
+            height: 50%;
+            font-size: medium;
+            justify-content: center;
+            padding-top: 20px;
+            padding-left: 20px;
+            
+           
+           }
+         .button{
+                float: right;
+                width:10%;
+                height: 50%;
+                padding-right: 10%;
+                padding-top: 20px;
+            }
+          .plus{
+            background-color:rgb(123, 123, 182);
+            width: 40px;
+            font-size: xx-large;
+            border-radius: 15px;
+            color:white;
+           } 
+          
+          #fnumber{
+             height: 30px;
+             border-radius: 10px;
+             
+          }
+          #snumber{
+            height: 30px;
+            border-radius: 10px;
+          }
+          #tnumber{
+            height: 30px;
+            border-radius: 10px;
+          }
+
+    </style>
+</head>
+<body>
+   <form action="">
+      <div class="main">
+            <div class="first">
+                <label for = "fnumber">1st  Number</label>
+                <input type = "text"id = "fnumber"placeholder="Add Number"required><br><br>
+                <label for = "snumber">2nd Number</label>
+                <input type = "text"id ="snumber"placeholder="Add Number"required><br><br>
+                <label for="tnumber">Result</label>
+                <input type = "text"id = "tnumber"placeholder="Result"required><br><br>
+           </div>
+            <div class="button">    
+                <button type="button"onclick="add()"class= "plus"> + </button> <br><br>
+                <button type="button"onclick="subtract()" class= "plus"> - </button><br><br>
+                <button type="button"onclick="multiply()"class= "plus"> * </button><br><br>
+                <button type="button"onclick="divide()"class= "plus"> / </button><br><br>
+            </div> 
+      </div>
+  </form>
+  <script>
+    function validatenumber(){
+    
+    }
+    function add(){
+        const num1 = parseFloat(document.getElementById("fnumber").value);
+        const num2 = parseFloat(document.getElementById("snumber").value);
+        const result = num1+num2;
+        document.getElementById("tnumber").value=result;
+
+       
+    }
+      
+    function subtract(){
+        const num1 = parseFloat(document.getElementById("fnumber").value);
+        const num2 = parseFloat(document.getElementById("snumber").value);
+        const result = num1-num2;
+        document.getElementById("tnumber").value=result;
+
+    }
+    function multiply(){
+        const num1 = document.getElementById("fnumber").value;
+        const num2 = document.getElementById("snumber").value;
+        const result = num1 * num2;
+        document.getElementById("tnumber").value=result;
+        
+    }
+    function divide(){
+       var num1= document.getElementById("fnumber").value;
+       var num2= document.getElementById("snumber").value;
+       var result = num1/num2;
+       document.getElementById("tnumber").value=result;
+    }
+  </script>
+ 
+ /body>
+</html>
